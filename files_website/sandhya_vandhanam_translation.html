@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandhyā Vandhanam · Part I — Preface</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+Devanagari:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFAF4; --paper:#F7F0E0; --border:#D4B896;
+  --ink:#2C1810; --muted:#7A5C44; --dev:#8B1A1A;
+  --gold:#B8860B; --rust:#C05020; --faint:#EDE0C8;
+  --drop:#00000012;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.85;min-height:100vh}
+.wrap{max-width:800px;margin:0 auto;padding:60px 28px 90px}
+
+/* NAV */
+.topnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.topnav a{font-family:'Playfair Display',serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .2s}
+.topnav a:hover{border-color:var(--gold)}
+
+/* HEADER */
+header{text-align:center;margin-bottom:56px}
+.sri{font-family:'Noto Sans Devanagari',serif;font-size:1.6rem;color:var(--gold);display:block;margin-bottom:10px;letter-spacing:.1em}
+h1{font-family:'Noto Sans Devanagari',serif;font-size:2.3rem;color:var(--dev);font-weight:400;line-height:1.4;margin-bottom:6px}
+.roman-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--muted);font-style:italic;margin-bottom:6px}
+.sub{font-size:.92rem;color:var(--muted);letter-spacing:.04em}
+.badge{display:inline-block;margin-top:16px;border:1px solid var(--border);color:var(--gold);font-family:'Playfair Display',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 16px}
+hr.ornament{border:none;border-top:1px solid var(--border);margin:40px 0;position:relative}
+hr.ornament::before{content:'॥';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 12px;color:var(--gold);font-family:'Noto Sans Devanagari',serif;font-size:1rem}
+
+/* TOC */
+.toc{background:var(--paper);border:1px solid var(--border);padding:28px 32px;margin-bottom:52px;box-shadow:0 2px 12px var(--drop)}
+.toc-title{font-family:'Playfair Display',serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.toc-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
+@media(max-width:580px){.toc-grid{grid-template-columns:1fr}}
+.toc-row{display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px dotted var(--border)}
+.toc-n{color:var(--rust);font-family:'Playfair Display',serif;font-size:.72rem;font-weight:700;min-width:18px}
+.toc-d{font-family:'Noto Sans Devanagari',serif;font-size:.88rem;color:var(--dev);line-height:1.5}
+.toc-e{font-size:.8rem;color:var(--muted);font-style:italic}
+.toc-p{margin-left:auto;font-size:.75rem;color:var(--gold);font-family:'Playfair Display',serif;white-space:nowrap}
+
+/* PAGE HEADER */
+.pg-head{display:flex;align-items:stretch;margin-bottom:28px;margin-top:52px}
+.pg-num{background:var(--rust);color:#fff;font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;writing-mode:horizontal-tb;white-space:nowrap;display:flex;align-items:center}
+.pg-label{border:1px solid var(--border);border-left:none;padding:8px 16px;font-family:'Playfair Display',serif;font-size:.82rem;letter-spacing:.05em;color:var(--muted);flex:1;display:flex;align-items:center}
+
+/* SECTION BLOCK — the core layout unit */
+.block{margin-bottom:44px}
+
+/* 1. Original text */
+.original{background:var(--paper);border-left:4px solid var(--gold);padding:18px 22px;font-family:'Noto Sans Devanagari',serif;font-size:1.08rem;color:var(--dev);line-height:2;box-shadow:0 1px 6px var(--drop)}
+
+/* 2. Translation */
+.translation{padding:14px 22px 0;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.8;border-left:4px solid var(--faint)}
+
+/* 3. Word dropdown */
+details.words{margin-top:10px}
+details.words summary{cursor:pointer;font-family:'Playfair Display',serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:7px 22px;background:var(--faint);border-top:1px solid var(--border);list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none}
+details.words summary::-webkit-details-marker{display:none}
+details.words summary::after{content:'▾';font-size:1rem;transition:transform .2s}
+details.words[open] summary::after{transform:rotate(180deg)}
+.word-grid{display:flex;flex-wrap:wrap;gap:8px;padding:14px 22px;background:#fff;border:1px solid var(--border);border-top:none}
+.wc{display:flex;flex-direction:column;align-items:center;border:1px solid var(--faint);border-radius:3px;padding:5px 10px;min-width:72px;background:var(--bg)}
+.wo{font-family:'Noto Sans Devanagari',serif;font-size:.85rem;color:var(--dev);font-weight:600;line-height:1.4;text-align:center}
+.wr{font-size:.66rem;color:var(--muted);font-style:italic;line-height:1.3;text-align:center}
+.wm{font-size:.66rem;color:var(--gold);font-weight:700;line-height:1.3;text-align:center}
+
+/* section label */
+.slabel{font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:6px;display:block}
+
+footer{text-align:center;margin-top:56px;padding-top:24px;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted);font-style:italic}
+footer .f-dev{font-family:'Noto Sans Devanagari',serif;font-size:1.2rem;color:var(--gold);display:block;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav">
+  <a href="index.html">⌂ Index</a>
+  <a href="sandhya_vandhanam_part2_translation.html">Part II — Ritual Text →</a>
+</nav>
+
+<header>
+  <span class="sri">॥ श्रीः ॥</span>
+  <h1>संध्यावंदनम्</h1>
+  <div class="roman-title">Sandhyā Vandhanam</div>
+  <div class="sub">Āśvalāyana Trikāla Sandhyā — A Vedic Daily Ritual Compendium</div>
+  <span class="badge">Part I · Marathi Preface &amp; Table of Contents</span>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-title">विषय सूचिका · Table of Contents</div>
+  <div class="toc-grid">
+    <div class="toc-row"><span class="toc-n">1</span><span><div class="toc-d">प्रात: स्मरणम्</div><div class="toc-e">Prāta Smaraṇam — Morning Remembrance</div></span><span class="toc-p">p.7</span></div>
+    <div class="toc-row"><span class="toc-n">2</span><span><div class="toc-d">भस्मधारण विधिः</div><div class="toc-e">Bhasmadhāraṇa — Wearing Sacred Ash</div></span><span class="toc-p">p.8</span></div>
+    <div class="toc-row"><span class="toc-n">3</span><span><div class="toc-d">यज्ञोपवीत धारण विधिः</div><div class="toc-e">Yajñopavīta — Sacred Thread</div></span><span class="toc-p">p.9</span></div>
+    <div class="toc-row"><span class="toc-n">4</span><span><div class="toc-d">आश्वलायन संध्यापयोगः</div><div class="toc-e">Āśvalāyana Sandhyāprayogaḥ</div></span><span class="toc-p">p.18</span></div>
+    <div class="toc-row"><span class="toc-n">5</span><span><div class="toc-d">सूर्य नमस्काराः</div><div class="toc-e">Sūrya Namaskārāḥ — Sun Salutations</div></span><span class="toc-p">p.20</span></div>
+    <div class="toc-row"><span class="toc-n">6</span><span><div class="toc-d">अभिकायेः</div><div class="toc-e">Abhikāyeḥ — Ritual Oblations</div></span><span class="toc-p">p.23</span></div>
+    <div class="toc-row"><span class="toc-n">7</span><span><div class="toc-d">नित्योपयोग सर्वसामान्य देव पूजा</div><div class="toc-e">Daily Universal God Worship</div></span><span class="toc-p">p.39</span></div>
+    <div class="toc-row"><span class="toc-n">8</span><span><div class="toc-d">माध्याह्निक संध्या</div><div class="toc-e">Mādhyāhnika Sandhyā — Midday Rite</div></span><span class="toc-p">p.44</span></div>
+    <div class="toc-row"><span class="toc-n">9</span><span><div class="toc-d">पुरुषसूक्तम्</div><div class="toc-e">Puruṣasūktam — Hymn of the Cosmic Person</div></span><span class="toc-p">p.47</span></div>
+    <div class="toc-row"><span class="toc-n">10</span><span><div class="toc-d">श्रीसूक्तम्</div><div class="toc-e">Śrīsūktam — Hymn to Goddess Śrī</div></span><span class="toc-p">p.52</span></div>
+    <div class="toc-row"><span class="toc-n">11</span><span><div class="toc-d">सायं औपासन होमः</div><div class="toc-e">Evening Domestic Fire Ritual</div></span><span class="toc-p">p.54</span></div>
+    <div class="toc-row"><span class="toc-n">12</span><span><div class="toc-d">प्राउहोमः</div><div class="toc-e">Morning Domestic Fire Ritual</div></span><span class="toc-p">p.56</span></div>
+    <div class="toc-row"><span class="toc-n">13</span><span><div class="toc-d">आपोशनविधिः</div><div class="toc-e">Āpośanavidhiḥ — Water Sipping Rite</div></span><span class="toc-p">p.57</span></div>
+    <div class="toc-row"><span class="toc-n">14</span><span><div class="toc-d">ब्रह्मयज्ञ:</div><div class="toc-e">Brahmayajña — Vedic Recitation Sacrifice</div></span><span class="toc-p">p.62</span></div>
+    <div class="toc-row"><span class="toc-n">15</span><span><div class="toc-d">अमावास्या तर्पणम्</div><div class="toc-e">New-Moon Ancestral Libations</div></span><span class="toc-p">p.63</span></div>
+    <div class="toc-row"><span class="toc-n">16</span><span><div class="toc-d">त्रिसुपर्णम्</div><div class="toc-e">Trisūparṇam — Hymn of Three Eagles</div></span><span class="toc-p">p.67</span></div>
+    <div class="toc-row"><span class="toc-n">17</span><span><div class="toc-d">नवरात्र पूजा</div><div class="toc-e">Navarātra Pūjā — Nine-Night Worship</div></span><span class="toc-p">p.71</span></div>
+    <div class="toc-row"><span class="toc-n">18</span><span><div class="toc-d">कुलदेवतानां आरतयः</div><div class="toc-e">Āratīs for Family Deities</div></span><span class="toc-p">p.89</span></div>
+  </div>
+</div>
+
+<hr class="ornament">
+
+<!-- ═══════════════════════════════ PAGE 1 ═══════════════════════════════ -->
+<div class="pg-head"><span class="pg-num">Page 1</span><span class="pg-label">प्रस्तावना — Preface: Publication Notice</span></div>
+
+<span class="slabel">Opening mark</span>
+<div class="block">
+  <div class="original">॥ श्रीः ॥</div>
+  <div class="translation">Salutation to Śrī — an auspicious invocatory mark placed at the opening of the text.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">श्रीः</span><span class="wr">Śrīḥ</span><span class="wm">Goddess Śrī; auspiciousness</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Paragraph 1 — About this edition</span>
+<div class="block">
+  <div class="original">" आश्वलायन त्रिकाल संध्या " ची आवृत्ति आज आम्हांला प्रकाशित करण्यास अत्यंत आनंद होत आहे । गेल्या पन्नास वर्षांत या पुस्तकाच्या दोन च आवृत्ति प्रसिद्ध झाल्या; तरीहीं या पुस्तकाची लोकप्रियता कमी झालेली नाहीं । गेलें वर्षापासून हे पुस्तक बाजारांत मिळत नव्हते ।</div>
+  <div class="translation">We are extremely pleased to publish today this edition of the "Āśvalāyana Trikāla Sandhyā." In the last fifty years only two editions of this book were published, yet the popularity of this book has not diminished at all. For the past year this book was not available in the market.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">आश्वलायन</span><span class="wr">āśvalāyana</span><span class="wm">name of a Vedic school</span></div>
+    <div class="wc"><span class="wo">त्रिकाल</span><span class="wr">trikāla</span><span class="wm">three times of day</span></div>
+    <div class="wc"><span class="wo">संध्या</span><span class="wr">sandhyā</span><span class="wm">twilight junction rite</span></div>
+    <div class="wc"><span class="wo">आवृत्ति</span><span class="wr">āvṛtti</span><span class="wm">edition; repetition</span></div>
+    <div class="wc"><span class="wo">आज</span><span class="wr">āja</span><span class="wm">today</span></div>
+    <div class="wc"><span class="wo">आम्हांला</span><span class="wr">āmhāṃlā</span><span class="wm">to us</span></div>
+    <div class="wc"><span class="wo">प्रकाशित</span><span class="wr">prakāśit</span><span class="wm">to publish; illuminate</span></div>
+    <div class="wc"><span class="wo">अत्यंत</span><span class="wr">atyaṃt</span><span class="wm">extremely; very much</span></div>
+    <div class="wc"><span class="wo">आनंद</span><span class="wr">ānanda</span><span class="wm">joy; bliss</span></div>
+    <div class="wc"><span class="wo">पन्नास</span><span class="wr">pannāsa</span><span class="wm">fifty</span></div>
+    <div class="wc"><span class="wo">वर्षांत</span><span class="wr">varṣāṃt</span><span class="wm">in the years</span></div>
+    <div class="wc"><span class="wo">प्रसिद्ध</span><span class="wr">prasiddha</span><span class="wm">published; well-known</span></div>
+    <div class="wc"><span class="wo">झाल्या</span><span class="wr">jhālyā</span><span class="wm">were / became</span></div>
+    <div class="wc"><span class="wo">तरीहीं</span><span class="wr">tarīhīṃ</span><span class="wm">even so; nevertheless</span></div>
+    <div class="wc"><span class="wo">लोकप्रियता</span><span class="wr">lokapriyatā</span><span class="wm">popularity</span></div>
+    <div class="wc"><span class="wo">कमी झाली नाहीं</span><span class="wr">kamī jhālī nāhīṃ</span><span class="wm">has not diminished</span></div>
+    <div class="wc"><span class="wo">बाजारांत</span><span class="wr">bājārāṃt</span><span class="wm">in the market</span></div>
+    <div class="wc"><span class="wo">मिळत नव्हते</span><span class="wr">miḷat navhate</span><span class="wm">was not available</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Paragraph 2 — About the curator</span>
+<div class="block">
+  <div class="original">दुसऱ्या आवृत्तींत यापुस्तकाचे संग्राहक श्री सुंदरशास्त्री, तेजावर, यांच्या कडून काहीं सुधारणा करतां येणें शक्य असल्यास त्यासुधारणा करून घेण्याच्या आमच्या विचार होता; व त्या दृष्टींने आम्हीं प्रयत्नहीं करीत होतों । परंतु श्री सुंदरशास्त्री चे देह स्वास्थ्य नसल्यामुळें, तरीहीं त्यांचें आज्ञावरुन हेपुस्तक आहे त्याच स्वरूपांत । कितीयेक विषय न्यूनातिरिक्तहीं मिळवू करावें लागलें ।</div>
+  <div class="translation">In the second edition we intended, if possible, to make certain improvements through the book's curator Shri Sundarshastri of Tejavar, and we were making efforts in that direction. But since Shri Sundarshastri was not in good health, the book is being published by his instruction in its same original form. Several topics also had to be supplemented or reduced.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">दुसऱ्या</span><span class="wr">dusaṛyā</span><span class="wm">second</span></div>
+    <div class="wc"><span class="wo">संग्राहक</span><span class="wr">saṃgrāhak</span><span class="wm">compiler; curator</span></div>
+    <div class="wc"><span class="wo">सुधारणा</span><span class="wr">sudhāraṇā</span><span class="wm">improvements; corrections</span></div>
+    <div class="wc"><span class="wo">शक्य असल्यास</span><span class="wr">śakya asalyās</span><span class="wm">if feasible / possible</span></div>
+    <div class="wc"><span class="wo">प्रयत्न</span><span class="wr">prayatna</span><span class="wm">effort; endeavour</span></div>
+    <div class="wc"><span class="wo">परंतु</span><span class="wr">paraṃtu</span><span class="wm">but; however</span></div>
+    <div class="wc"><span class="wo">देह स्वास्थ्य</span><span class="wr">deha svāsthya</span><span class="wm">bodily health</span></div>
+    <div class="wc"><span class="wo">नसल्यामुळें</span><span class="wr">nasalyāmuḷẽ</span><span class="wm">due to absence of</span></div>
+    <div class="wc"><span class="wo">आज्ञावरुन</span><span class="wr">ājñāvarun</span><span class="wm">by instruction/order</span></div>
+    <div class="wc"><span class="wo">स्वरूपांत</span><span class="wr">svarūpāṃt</span><span class="wm">in its same form</span></div>
+    <div class="wc"><span class="wo">न्यूनातिरिक्त</span><span class="wr">nyūnātirikt</span><span class="wm">more or less; supplemented</span></div>
+    <div class="wc"><span class="wo">लागलें</span><span class="wr">lāgalẽ</span><span class="wm">had to; was required</span></div>
+  </div></details>
+</div>
+
+<!-- ═══════════════════════════════ PAGES 2–3 ═══════════════════════════ -->
+<div class="pg-head"><span class="pg-num">Pages 2–3</span><span class="pg-label">Social Commentary on the Decline of Vedic Learning</span></div>
+
+<span class="slabel">Paragraph 3 — The words of great men</span>
+<div class="block">
+  <div class="original">कांहींमहापुरुष ह्नटले प्रकार " आचार प्रघान असून, प्राचीन धर्मग्रंथ संस्कृत भाषेंत असून, त्याभाषेंचें परंपराशुद्ध अध्ययन दिवसोदिवस लुसहोत चाललें । अध्ययन हीं एका विवक्षित वर्गांनेंच करावें । अशी समजूत समाजांत हढझालेलीं आहे । तो वर्गच म्हणजे वैदिक, भट्ट, पुरोहित यांचाहोय ।</div>
+  <div class="translation">As some great men have said: "Although conduct is paramount, and the ancient religious scriptures are in Sanskrit, the traditionally pure study of that language has been declining day by day. Study is to be done only by a particular class — this notion has become deeply entrenched in society. That class is none other than the Vaidika (Vedic scholars), Bhaṭṭa (learned priests), and Purohita (ritual priests)."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">महापुरुष</span><span class="wr">mahāpuruṣa</span><span class="wm">great men; saints</span></div>
+    <div class="wc"><span class="wo">आचार</span><span class="wr">ācāra</span><span class="wm">conduct; ritual practice</span></div>
+    <div class="wc"><span class="wo">प्रधान</span><span class="wr">pradhāna</span><span class="wm">primary; paramount</span></div>
+    <div class="wc"><span class="wo">प्राचीन</span><span class="wr">prācīna</span><span class="wm">ancient; old</span></div>
+    <div class="wc"><span class="wo">धर्मग्रंथ</span><span class="wr">dharmagraṃtha</span><span class="wm">religious scriptures</span></div>
+    <div class="wc"><span class="wo">संस्कृत</span><span class="wr">saṃskṛta</span><span class="wm">Sanskrit language</span></div>
+    <div class="wc"><span class="wo">परंपरा</span><span class="wr">paramparā</span><span class="wm">tradition; lineage</span></div>
+    <div class="wc"><span class="wo">अध्ययन</span><span class="wr">adhyayana</span><span class="wm">study; learning</span></div>
+    <div class="wc"><span class="wo">दिवसोदिवस</span><span class="wr">divasodivasa</span><span class="wm">day by day</span></div>
+    <div class="wc"><span class="wo">लुसहोत</span><span class="wr">lusahot</span><span class="wm">declining; fading</span></div>
+    <div class="wc"><span class="wo">विवक्षित</span><span class="wr">vivakṣita</span><span class="wm">specific; particular</span></div>
+    <div class="wc"><span class="wo">वर्ग</span><span class="wr">varga</span><span class="wm">class; group</span></div>
+    <div class="wc"><span class="wo">समजूत</span><span class="wr">samajūt</span><span class="wm">notion; understanding</span></div>
+    <div class="wc"><span class="wo">हढझालेलीं</span><span class="wr">haḍhazhālelīṃ</span><span class="wm">firmly entrenched</span></div>
+    <div class="wc"><span class="wo">वैदिक</span><span class="wr">vaidika</span><span class="wm">Vedic scholar</span></div>
+    <div class="wc"><span class="wo">भट्ट</span><span class="wr">bhaṭṭa</span><span class="wm">learned priest; pandit</span></div>
+    <div class="wc"><span class="wo">पुरोहित</span><span class="wr">purohita</span><span class="wm">family priest; officiant</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Paragraph 4 — The livelihood problem</span>
+<div class="block">
+  <div class="original">ज्यांनीं पाहिजे असल्यास संस्कृत भाषेंचें यथा तथा अध्ययन करुन षोडशसंस्कारादि जे धार्मिकविधि असतील त्यावर, कथापुराण सांगून आपली उपजीविका घ्यावी । बरें, ह्यावर्गांचीतरी उत्कर्षस्थिति अशावी ! तीहीं नाहीं ! दिवसें दिवस जेव्हां धर्मश्रद्धाच नामशेष होणाच्या पंथास लागली आहे तेव्हां ह्यावर्गांनेंतरी अध्ययनाचा स्वटाटोप कांडणून करावा ? नारन् बारा वर्षें अध्ययन करुन उपजीविकेची वर तारांबळ उड्लागली, तर बिना कारण वेदाध्ययनांत आयुष्याचा व्यय करतो कोण ?</div>
+  <div class="translation">Those who wish to, should study Sanskrit as best they can and earn their livelihood by performing the sixteen sacraments (ṣoḍaśa saṃskāra) and other religious rites, and by reciting sacred Purāṇas. Well then, at least this class should be flourishing! But no — even that is not so! When day by day religious faith itself is on the verge of disappearing, can this class still be expected to make even an outward show of learning? Rather, after twelve years of study, when one is scrambling just to earn a livelihood, who would needlessly waste their life in Vedic learning?</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">षोडशसंस्कार</span><span class="wr">ṣoḍaśasaṃskāra</span><span class="wm">sixteen sacraments / rites of passage</span></div>
+    <div class="wc"><span class="wo">धार्मिकविधि</span><span class="wr">dhārmikavidhi</span><span class="wm">religious ritual procedure</span></div>
+    <div class="wc"><span class="wo">कथापुराण</span><span class="wr">kathāpurāṇa</span><span class="wm">sacred Purāṇa recitation</span></div>
+    <div class="wc"><span class="wo">उपजीविका</span><span class="wr">upajīvikā</span><span class="wm">livelihood</span></div>
+    <div class="wc"><span class="wo">उत्कर्ष</span><span class="wr">utkarṣa</span><span class="wm">prosperity; advancement</span></div>
+    <div class="wc"><span class="wo">धर्मश्रद्धा</span><span class="wr">dharmaśraddhā</span><span class="wm">religious faith</span></div>
+    <div class="wc"><span class="wo">नामशेष</span><span class="wr">nāmaśeṣa</span><span class="wm">only name remaining; extinct</span></div>
+    <div class="wc"><span class="wo">स्वटाटोप</span><span class="wr">svaṭāṭopa</span><span class="wm">outward show; pretense</span></div>
+    <div class="wc"><span class="wo">बारा वर्षें</span><span class="wr">bārā varṣẽ</span><span class="wm">twelve years</span></div>
+    <div class="wc"><span class="wo">तारांबळ</span><span class="wr">tārāṃbaḷ</span><span class="wm">scramble; struggle</span></div>
+    <div class="wc"><span class="wo">वेदाध्ययन</span><span class="wr">vedādhyayana</span><span class="wm">study of the Vedas</span></div>
+    <div class="wc"><span class="wo">आयुष्य व्यय</span><span class="wr">āyuṣya vyaya</span><span class="wm">waste of one's life</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Paragraph 5 — Major rites still require a priest</span>
+<div class="block">
+  <div class="original">अर्थात् हीवर्षें कमीं होऊं लागला आहे; व नामचेसर्वधार्मिकविधि, साधारण देव पूजा देखील ह्यावैदिक वर्गावरच अवलंबून राहिल्यामुळें, एखाद्या वेळीं तोनसला म्हणजे फारच अडचण व येईल । मोठमोठी धार्मिक कृत्यें, लग्न, मुंज, श्राद्ध, हवन इत्यादि सोडून, साधारण प्रचारांत तशा देव पूजासंभाशांत जरी भट्टांचे व पुरोहित असून वरलक्ष्मी पूजा, सिद्धिविनायक पूजा सांगण्यास, दहा बाराघराकडे जाण्याशी वृत्ती असली म्हणजे त्याभट्टाची व पूजा करणा-या गृहस्थांची वेळेचा रोळंबा झाल्यामुळें कायस्थिति होते हें प्रत्येकास अनुभवांत आली आहे ।</div>
+  <div class="translation">As a result, this class is declining in numbers; and since even ordinary daily worship depends entirely on these Vedic priests, if one is unavailable it creates great difficulty. Setting aside major religious rites — wedding (lagna), sacred thread ceremony (munjā), ancestral rite (śrāddha), fire sacrifice (havana) and the like — even for ordinary household deity worship like Varalakṣmī Pūjā and Siddhivinayaka Pūjā, the priest has to rush to ten or twelve houses, causing confusion of time for both the priest and the householder — this is something everyone has experienced.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">मोठमोठी</span><span class="wr">moṭhamoṭhī</span><span class="wm">major; large-scale</span></div>
+    <div class="wc"><span class="wo">लग्न</span><span class="wr">lagna</span><span class="wm">wedding; marriage rite</span></div>
+    <div class="wc"><span class="wo">मुंज</span><span class="wr">munjā</span><span class="wm">sacred thread ceremony</span></div>
+    <div class="wc"><span class="wo">श्राद्ध</span><span class="wr">śrāddha</span><span class="wm">ancestral memorial rite</span></div>
+    <div class="wc"><span class="wo">हवन</span><span class="wr">havana</span><span class="wm">fire sacrifice; oblation</span></div>
+    <div class="wc"><span class="wo">गृहस्थ</span><span class="wr">gṛhastha</span><span class="wm">householder</span></div>
+    <div class="wc"><span class="wo">रोळंबा</span><span class="wr">roḷaṃbā</span><span class="wm">confusion; muddle of time</span></div>
+    <div class="wc"><span class="wo">अनुभव</span><span class="wr">anubhava</span><span class="wm">experience</span></div>
+    <div class="wc"><span class="wo">वरलक्ष्मी</span><span class="wr">varalakṣmī</span><span class="wm">Varalakṣmī (form of Goddess Lakṣmī)</span></div>
+    <div class="wc"><span class="wo">सिद्धिविनायक</span><span class="wr">siddhivināyaka</span><span class="wm">Gaṇeśa as bestower of success</span></div>
+  </div></details>
+</div>
+
+<!-- ═══════════════════════════════ PAGE 3 ═══════════════════════════════ -->
+<div class="pg-head"><span class="pg-num">Page 3</span><span class="pg-label">Purpose of the Book — How to Use It</span></div>
+
+<span class="slabel">Paragraph 6 — Self-study is possible with brief guidance</span>
+<div class="block">
+  <div class="original">तथाप, अगदींच अनभ्यस्त पुरुषांनीं, अगोदर एक दोन दिवस, चांगल्या पुरोहिता कडून त्याल्या कार्यक्रमाची, म्हणजे, भस्मधारण, यज्ञोपवीत धारण, संध्या, देवपूजा, सूर्यनमस्कार, अभिकायें वगैरे इत्यादि, माहिती घेवून, त्याचे समक्षस्वतः दोन तीन चारदा वाचून, शिक्षापावळ्याम्हणजे, कार्याचे वेळीं पुस्तकाचा उपयोग करावा, तेंव्हा कठिणपणा वाटणार नाहीं ।</div>
+  <div class="translation">Even so, those who are completely uninitiated should first take instruction for one or two days from a capable priest regarding the procedures — namely the wearing of sacred ash, the sacred thread, Sandhyā, deity worship, Sun salutation, ritual oblations, etc. — then read through it two, three, or four times in his presence and learn. Thereafter, when it is time to perform, they should use this book — it will not feel difficult then.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">अनभ्यस्त</span><span class="wr">anabhyasta</span><span class="wm">uninitiated; unpracticed</span></div>
+    <div class="wc"><span class="wo">पुरोहित</span><span class="wr">purohita</span><span class="wm">family priest</span></div>
+    <div class="wc"><span class="wo">कार्यक्रम</span><span class="wr">kāryakrama</span><span class="wm">programme; procedure</span></div>
+    <div class="wc"><span class="wo">भस्मधारण</span><span class="wr">bhasmadhāraṇa</span><span class="wm">wearing sacred ash</span></div>
+    <div class="wc"><span class="wo">यज्ञोपवीत</span><span class="wr">yajñopavīta</span><span class="wm">sacred thread</span></div>
+    <div class="wc"><span class="wo">माहिती</span><span class="wr">māhitī</span><span class="wm">information; instruction</span></div>
+    <div class="wc"><span class="wo">समक्ष</span><span class="wr">samakaṣa</span><span class="wm">in the presence of</span></div>
+    <div class="wc"><span class="wo">शिक्षा</span><span class="wr">śikṣā</span><span class="wm">learning; training</span></div>
+    <div class="wc"><span class="wo">कठिणपणा</span><span class="wr">kaṭhiṇapaṇā</span><span class="wm">difficulty; hardship</span></div>
+    <div class="wc"><span class="wo">वाटणार नाहीं</span><span class="wr">vāṭaṇār nāhīṃ</span><span class="wm">will not feel / seem</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Paragraph 7 — Honour the priest; use the book in its place only</span>
+<div class="block">
+  <div class="original">अर्थात् असे अभ्यास केलें म्हणजें, पुरोहिताची थोडीशी नडभागणारी आहे । तरीहीं कोणीं कार्यासाटी पुरोहित दक्षिणा, बिडा वगेरे, त्यांचाभाग त्यांना देऊन त्यांचा आदरसत्कार करण्याविषयीं काहींहीं चुकूं नये । केवळ दुस-यावर राहून वेळाचा व्यय न व्हावा, आणीं थोडेंसें धार्मिक विषयांचें परिशीलन वाढावें म्हणून ह्यापुस्तकाची योजना केली आहे ॥ तेवढ्या पुरताच ह्याचा उपयोग करावा अशी विनंती आहे ॥</div>
+  <div class="translation">Even with such self-study, a small need for the priest remains. Still, one must never fail to give the priest his portion — dakshinā (fee), betel (bīḍā), etc. — and to show him proper honour and respect. The purpose of this book is only that one should not waste time by depending entirely on others, and that religious knowledge should grow a little. Please use it only to that extent — this is our humble request.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">दक्षिणा</span><span class="wr">dakshinā</span><span class="wm">ritual fee given to priest</span></div>
+    <div class="wc"><span class="wo">बिडा</span><span class="wr">bīḍā</span><span class="wm">betel offered as honour</span></div>
+    <div class="wc"><span class="wo">आदरसत्कार</span><span class="wr">ādarasatkāra</span><span class="wm">respect and honour</span></div>
+    <div class="wc"><span class="wo">परिशीलन</span><span class="wr">pariśīlana</span><span class="wm">study; cultivation of knowledge</span></div>
+    <div class="wc"><span class="wo">योजना</span><span class="wr">yojanā</span><span class="wm">plan; design; purpose</span></div>
+    <div class="wc"><span class="wo">विनंती</span><span class="wr">vinaṃtī</span><span class="wm">humble request</span></div>
+  </div></details>
+</div>
+
+<!-- ═══════════════════════════════ PAGE 4 ═══════════════════════════════ -->
+<div class="pg-head"><span class="pg-num">Page 4</span><span class="pg-label">Contents of the Book — Closing</span></div>
+
+<span class="slabel">Paragraph 8 — What this book contains</span>
+<div class="block">
+  <div class="original">प्रस्तुत पुस्तकांत वेदमंत्रापेकीं, ऋग्वेदांतील संध्या, पुरुषसूक्त, व त्रिसुपर्ण(यजुर्वेद) यांस स्वरदिले आहेत । पुरोहित मार्फत शिकावयाचें आवश्यक न आहे । अगोदर लिहिल्या प्रकार शिक्षामधान होतें । नवरात्र पूजा विषयींव ऋग्वेदांचें देहांमेंडलांचें विषयीं वाचकापुढें आणण्याचा जेशक्य असेल ते सर्व प्रयत्न केला आहे । अखेरीस काहीं उपयुक्त देव, देवींच्या आरत्या दिल्या आहेत ॥</div>
+  <div class="translation">In the present book, among the Vedic hymns, the Sandhyā from the Ṛgveda, the Puruṣasūkta, and the Trisūparṇa (from the Yajurveda) have been marked with accents (svara). It is not necessary to learn these through a priest — as described earlier, they can be self-taught. Every possible effort has been made to bring before the reader information on Navarātra worship and the maṇḍalas (books/circles) of the Ṛgveda. At the end, some useful āratī songs for various gods and goddesses have been included.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">प्रस्तुत</span><span class="wr">prastuta</span><span class="wm">present; this very</span></div>
+    <div class="wc"><span class="wo">वेदमंत्र</span><span class="wr">vedamaṃtra</span><span class="wm">Vedic mantras/hymns</span></div>
+    <div class="wc"><span class="wo">ऋग्वेद</span><span class="wr">Ṛgveda</span><span class="wm">oldest of the four Vedas</span></div>
+    <div class="wc"><span class="wo">पुरुषसूक्त</span><span class="wr">Puruṣasūkta</span><span class="wm">Hymn of the Cosmic Person</span></div>
+    <div class="wc"><span class="wo">त्रिसुपर्ण</span><span class="wr">Trisūparṇa</span><span class="wm">Hymn of the Three Eagles (Yajurveda)</span></div>
+    <div class="wc"><span class="wo">स्वर</span><span class="wr">svara</span><span class="wm">accent; musical tone in recitation</span></div>
+    <div class="wc"><span class="wo">नवरात्र</span><span class="wr">navarātra</span><span class="wm">Nine-Night festival</span></div>
+    <div class="wc"><span class="wo">देहांमेंडल</span><span class="wr">dehāṃmeṃḍala</span><span class="wm">maṇḍalas / books of the Ṛgveda</span></div>
+    <div class="wc"><span class="wo">आरत्या</span><span class="wr">āratyā</span><span class="wm">āratī devotional lamp songs</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Closing line</span>
+<div class="block">
+  <div class="original">ह्या प्रस्तुत आवृत्तीचे वाचक स्वागत करतील अशी भाशा आहे ।</div>
+  <div class="translation">It is our hope that the readers will welcome this present edition.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">वाचक</span><span class="wr">vācaka</span><span class="wm">readers</span></div>
+    <div class="wc"><span class="wo">स्वागत</span><span class="wr">svāgata</span><span class="wm">welcome; reception</span></div>
+    <div class="wc"><span class="wo">करतील</span><span class="wr">karatīl</span><span class="wm">will do</span></div>
+    <div class="wc"><span class="wo">अशी भाशा</span><span class="wr">aśī bhāśā</span><span class="wm">such is the hope/expectation</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<footer>
+  <span class="f-dev">॥ शुभम् भवतु ॥</span>
+  <em>May all be auspicious — Sandhyā Vandhanam · Part I · Marathi Preface Translation</em>
+</footer>
+
+</div>
+</body>
+</html>

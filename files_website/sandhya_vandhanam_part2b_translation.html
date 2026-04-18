@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandhyā Vandhanam · Part II — Ritual Text</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+Devanagari:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFAF4;--paper:#F7F0E0;--border:#D4B896;
+  --ink:#2C1810;--muted:#7A5C44;--dev:#8B1A1A;
+  --gold:#B8860B;--rust:#C05020;--faint:#EDE0C8;
+  --drop:#00000012;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Crimson Pro',Georgia,serif;font-size:19px;line-height:1.85;min-height:100vh}
+.wrap{max-width:800px;margin:0 auto;padding:60px 28px 90px}
+.topnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.topnav a{font-family:'Playfair Display',serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .2s}
+.topnav a:hover{border-color:var(--gold)}
+header{text-align:center;margin-bottom:56px}
+.sri{font-family:'Noto Sans Devanagari',serif;font-size:1.6rem;color:var(--gold);display:block;margin-bottom:8px;letter-spacing:.1em}
+h1{font-family:'Noto Sans Devanagari',serif;font-size:2.2rem;color:var(--dev);font-weight:400;line-height:1.4;margin-bottom:6px}
+.roman-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--muted);font-style:italic;margin-bottom:6px}
+.sub{font-size:.92rem;color:var(--muted);letter-spacing:.04em}
+.badge{display:inline-block;margin-top:16px;border:1px solid var(--border);color:var(--gold);font-family:'Playfair Display',serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 16px}
+hr.ornament{border:none;border-top:1px solid var(--border);margin:40px 0;position:relative}
+hr.ornament::before{content:'॥';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 12px;color:var(--gold);font-family:'Noto Sans Devanagari',serif;font-size:1rem}
+.pg-head{display:flex;align-items:stretch;margin-bottom:28px;margin-top:52px}
+.pg-num{background:var(--rust);color:#fff;font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;white-space:nowrap;display:flex;align-items:center}
+.pg-label{border:1px solid var(--border);border-left:none;padding:8px 16px;font-family:'Playfair Display',serif;font-size:.82rem;letter-spacing:.05em;color:var(--muted);flex:1;display:flex;align-items:center}
+.block{margin-bottom:44px}
+.slabel{font-family:'Playfair Display',serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:6px;display:block}
+.original{background:var(--paper);border-left:4px solid var(--gold);padding:18px 22px;font-family:'Noto Sans Devanagari',serif;font-size:1.08rem;color:var(--dev);line-height:2;box-shadow:0 1px 6px var(--drop)}
+.original .roman{font-family:'Crimson Pro',Georgia,serif;font-size:.88rem;color:var(--muted);font-style:italic;line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border)}
+.translation{padding:14px 22px 0;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.8;border-left:4px solid var(--faint)}
+details.words{margin-top:10px}
+details.words summary{cursor:pointer;font-family:'Playfair Display',serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:7px 22px;background:var(--faint);border-top:1px solid var(--border);list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none}
+details.words summary::-webkit-details-marker{display:none}
+details.words summary::after{content:'▾';font-size:1rem;transition:transform .2s}
+details.words[open] summary::after{transform:rotate(180deg)}
+.word-grid{display:flex;flex-wrap:wrap;gap:8px;padding:14px 22px;background:#fff;border:1px solid var(--border);border-top:none}
+.wc{display:flex;flex-direction:column;align-items:center;border:1px solid var(--faint);border-radius:3px;padding:5px 10px;min-width:72px;background:var(--bg)}
+.wo{font-family:'Noto Sans Devanagari',serif;font-size:.85rem;color:var(--dev);font-weight:600;line-height:1.4;text-align:center}
+.wr{font-size:.66rem;color:var(--muted);font-style:italic;line-height:1.3;text-align:center}
+.wm{font-size:.66rem;color:var(--gold);font-weight:700;line-height:1.3;text-align:center}
+/* procedure list */
+.proc{background:var(--paper);border:1px solid var(--border);padding:16px 20px;margin-top:10px}
+.proc table{width:100%;border-collapse:collapse;font-size:.9rem}
+.proc th{background:var(--faint);padding:6px 10px;text-align:left;font-family:'Playfair Display',serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border)}
+.proc td{padding:6px 10px;border-bottom:1px solid var(--faint);vertical-align:top}
+.proc td.dev{font-family:'Noto Sans Devanagari',serif;color:var(--dev);font-size:.92rem}
+.proc td.eng{color:var(--ink);font-size:.88rem}
+footer{text-align:center;margin-top:56px;padding-top:24px;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted);font-style:italic}
+footer .f-dev{font-family:'Noto Sans Devanagari',serif;font-size:1.2rem;color:var(--gold);display:block;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topnav">
+  <a href="sandhya_vandhanam_part2_translation.html">← Part IIa — Invocations &amp; Rites</a>
+  <a href="index.html">⌂ Index</a>
+</nav>
+
+<header>
+  <span class="sri">॥ श्रीः ॥ श्रीगणेश शारदागुरुभ्यो नमः ॥</span>
+  <h1>॥ अथ आश्वलायन संध्याप्रयोगः ॥</h1>
+  <div class="roman-title">Atha Āśvalāyana Sandhyāprayogaḥ</div>
+  <div class="sub">Now begins the Āśvalāyana Sandhyā Rite</div>
+  <span class="badge">Part IIb · Ācamana through Gāyatrī Invocation · Book pp. 9–13</span>
+</header>
+
+<span class="slabel">॥ श्रीः ॥ श्रीगणेश शारदागुरुभ्यो नमः — ॥ अथ आश्वलायन संध्याप्रयोगः ॥</span>
+<div class="block">
+  <div class="original">आचमनम् — केशव, नारायण, माधव इति त्रि:, गोविन्द इति दक्षिण कर प्रक्षालनम् ।</div>
+  <div class="translation">Ācamana — "Keśava, Nārāyaṇa, Mādhava" — sip water three times. "Govinda" — wash the right hand.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">आचमनम्</span><span class="wr">ācamanam</span><span class="wm">ritual sipping of water for purification</span></div>
+    <div class="wc"><span class="wo">केशव</span><span class="wr">keśava</span><span class="wm">Viṣṇu — "he of beautiful hair"</span></div>
+    <div class="wc"><span class="wo">नारायण</span><span class="wr">nārāyaṇa</span><span class="wm">refuge of all beings</span></div>
+    <div class="wc"><span class="wo">माधव</span><span class="wr">mādhava</span><span class="wm">consort of Māyā/Lakṣmī</span></div>
+    <div class="wc"><span class="wo">त्रिः</span><span class="wr">triḥ</span><span class="wm">three times</span></div>
+    <div class="wc"><span class="wo">गोविन्द</span><span class="wr">govinda</span><span class="wm">lord of cows; Kṛṣṇa</span></div>
+    <div class="wc"><span class="wo">दक्षिण कर</span><span class="wr">dakṣiṇa kara</span><span class="wm">right hand</span></div>
+    <div class="wc"><span class="wo">प्रक्षालनम्</span><span class="wr">prakṣālanam</span><span class="wm">washing; rinsing</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">24 Names of Viṣṇu — each paired with touching a body part (nyāsa)</span>
+<div class="block">
+  <div class="original">विष्णो—वामकर प्रक्षालनम् । मधुसूदन, त्रिविक्रम—ओष्ठद्वय प्रोक्षणम् । वामन, श्रीधर—मुखमार्जनम् । हृषीकेश—वामकर प्रोक्षणम् । पद्मनाभ—पादप्रक्षालनम् । दामोदर—मस्तक प्रोक्षणम् । संकर्षण—ऊर्ध्वोष्ठप्रोक्षणम् । वासुदेव—दक्षिण नासाछिद्रस्पर्शः । प्रद्युम्न—वामनासाछिद्रस्पर्शः । अनिरुद्ध—दक्षिणनेत्रस्पर्शः । पुरुषोत्तम—वामनेत्रस्पर्शः । अधोक्षज—दक्षिणकर्णस्पर्शः । नारसिंह—वामकर्णस्पर्शः । अच्युत—नाभिस्पर्शः । जनार्दन—हृदयस्पर्शः । उपेन्द्र—मस्तकस्पर्शः । हरे—दक्षिणभुजस्पर्शः । श्रीकृष्ण—वामभुजस्पर्शः ।</div>
+  <div class="translation">Viṣṇu — wash left hand. Madhusūdana, Trivikrama — sprinkle both lips. Vāmana, Śrīdhara — wipe the face. Hṛṣīkeśa — sprinkle left hand. Padmanābha — wash the feet. Dāmodara — sprinkle the head. Saṃkarṣaṇa — sprinkle the upper lip. Vāsudeva — touch right nostril. Pradyumna — touch left nostril. Aniruddha — touch right eye. Puruṣottama — touch left eye. Adhokṣaja — touch right ear. Nārasiṃha — touch left ear. Acyuta — touch navel. Janārdana — touch heart. Upendra — touch head. Hare — touch right arm. Śrīkṛṣṇa — touch left arm.</div>
+  <details class="words"><summary>Word meanings — 24 Names of Viṣṇu</summary><div class="word-grid">
+    <div class="wc"><span class="wo">विष्णु</span><span class="wr">viṣṇu</span><span class="wm">the all-pervader</span></div>
+    <div class="wc"><span class="wo">मधुसूदन</span><span class="wr">madhusūdana</span><span class="wm">slayer of demon Madhu</span></div>
+    <div class="wc"><span class="wo">त्रिविक्रम</span><span class="wr">trivikrama</span><span class="wm">he who strode three worlds</span></div>
+    <div class="wc"><span class="wo">वामन</span><span class="wr">vāmana</span><span class="wm">the Dwarf Avatāra</span></div>
+    <div class="wc"><span class="wo">श्रीधर</span><span class="wr">śrīdhara</span><span class="wm">holder of Śrī/Lakṣmī</span></div>
+    <div class="wc"><span class="wo">हृषीकेश</span><span class="wr">hṛṣīkeśa</span><span class="wm">master of the senses</span></div>
+    <div class="wc"><span class="wo">पद्मनाभ</span><span class="wr">padmanābha</span><span class="wm">lotus-naveled</span></div>
+    <div class="wc"><span class="wo">दामोदर</span><span class="wr">dāmodara</span><span class="wm">bound at navel (by Yaśodā)</span></div>
+    <div class="wc"><span class="wo">संकर्षण</span><span class="wr">saṃkarṣaṇa</span><span class="wm">Balarāma; the plough-holder</span></div>
+    <div class="wc"><span class="wo">वासुदेव</span><span class="wr">vāsudeva</span><span class="wm">son of Vasudeva; Kṛṣṇa</span></div>
+    <div class="wc"><span class="wo">प्रद्युम्न</span><span class="wr">pradyumna</span><span class="wm">the exceedingly brilliant</span></div>
+    <div class="wc"><span class="wo">अनिरुद्ध</span><span class="wr">aniruddha</span><span class="wm">the unobstructed</span></div>
+    <div class="wc"><span class="wo">पुरुषोत्तम</span><span class="wr">puruṣottama</span><span class="wm">supreme person</span></div>
+    <div class="wc"><span class="wo">अधोक्षज</span><span class="wr">adhokṣaja</span><span class="wm">transcends the senses</span></div>
+    <div class="wc"><span class="wo">नारसिंह</span><span class="wr">nārasiṃha</span><span class="wm">Man-Lion Avatāra</span></div>
+    <div class="wc"><span class="wo">अच्युत</span><span class="wr">acyuta</span><span class="wm">infallible; the unfallen one</span></div>
+    <div class="wc"><span class="wo">जनार्दन</span><span class="wr">janārdana</span><span class="wm">agitator/liberator of beings</span></div>
+    <div class="wc"><span class="wo">उपेन्द्र</span><span class="wr">upendra</span><span class="wm">younger Indra; Vāmana</span></div>
+    <div class="wc"><span class="wo">हरे</span><span class="wr">hare</span><span class="wm">Hari; remover of sins</span></div>
+    <div class="wc"><span class="wo">श्रीकृष्ण</span><span class="wr">śrīkṛṣṇa</span><span class="wm">the all-attractive Lord</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<!-- ══════════════════════ PDF PAGE 6 (book p.10) ══════════════════════ -->
+<div class="pg-head"><span class="pg-num">Book p.10</span><span class="pg-label">Prāṇāyāma · Saṅkalpa · First Mārjana · Mantracamana (begins)</span></div>
+
+<span class="slabel">Prāṇāyāma — with Gāyatrī and seven Vyāhṛtis</span>
+<div class="block">
+  <div class="original">प्राणायामः— प्रणवस्य परब्रह्मऋषि:, परमात्मा देवता, दैवीगायत्री छंद:, प्राणायामे विनियोग:, ओं भू:, ओं सुव:, ओं स्व:, ओं मह:, ओं जन:, ओं तप:, ओं सत्यं, ओं तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि । धियोयोन: प्रचोदयात् ॥ ओं आपोज्योतीरसो डमृतं ब्रह्म भूर्भुव: स्वरोम् ॥</div>
+  <div class="translation">Prāṇāyāma — For the Praṇava (OM): the sage is Para-Brahman, the deity is the Supreme Self (Paramātmā), the meter is the divine Gāyatrī; its purpose is in Prāṇāyāma. [Recite the seven vyāhṛtis:] OM Bhūḥ · OM Bhuvaḥ · OM Svaḥ · OM Mahaḥ · OM Janaḥ · OM Tapaḥ · OM Satyam. [Then:] "OM — We meditate upon the supreme radiance of the divine Savitā; may He inspire our intellects." "OM — Water, Light, Essence, Immortality, Brahman — OM Bhūr Bhuvaḥ Svaḥ OM."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">प्राणायाम</span><span class="wr">prāṇāyāma</span><span class="wm">regulation of vital breath</span></div>
+    <div class="wc"><span class="wo">प्रणव</span><span class="wr">praṇava</span><span class="wm">the primordial syllable OM</span></div>
+    <div class="wc"><span class="wo">ऋषिः</span><span class="wr">ṛṣiḥ</span><span class="wm">seer of the mantra</span></div>
+    <div class="wc"><span class="wo">देवता</span><span class="wr">devatā</span><span class="wm">deity of the mantra</span></div>
+    <div class="wc"><span class="wo">छंदः</span><span class="wr">chandaḥ</span><span class="wm">meter/rhythm of the mantra</span></div>
+    <div class="wc"><span class="wo">विनियोगः</span><span class="wr">viniyogaḥ</span><span class="wm">specific application/purpose</span></div>
+    <div class="wc"><span class="wo">भूः</span><span class="wr">bhūḥ</span><span class="wm">earth; physical plane</span></div>
+    <div class="wc"><span class="wo">भुवः</span><span class="wr">bhuvaḥ</span><span class="wm">atmosphere; vital plane</span></div>
+    <div class="wc"><span class="wo">स्वः</span><span class="wr">svaḥ</span><span class="wm">heaven; mental plane</span></div>
+    <div class="wc"><span class="wo">महः</span><span class="wr">mahaḥ</span><span class="wm">the great plane</span></div>
+    <div class="wc"><span class="wo">जनः</span><span class="wr">janaḥ</span><span class="wm">the birth/causal plane</span></div>
+    <div class="wc"><span class="wo">तपः</span><span class="wr">tapaḥ</span><span class="wm">austerity plane</span></div>
+    <div class="wc"><span class="wo">सत्यम्</span><span class="wr">satyam</span><span class="wm">truth; the highest plane</span></div>
+    <div class="wc"><span class="wo">भर्गः</span><span class="wr">bhargaḥ</span><span class="wm">radiance; divine splendour of Sun</span></div>
+    <div class="wc"><span class="wo">धीमहि</span><span class="wr">dhīmahi</span><span class="wm">we meditate</span></div>
+    <div class="wc"><span class="wo">प्रचोदयात्</span><span class="wr">pracodayāt</span><span class="wm">may inspire; impel</span></div>
+    <div class="wc"><span class="wo">अमृतम्</span><span class="wr">amṛtam</span><span class="wm">immortality; nectar</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Saṅkalpa — Formal Intention</span>
+<div class="block">
+  <div class="original">सङ्कल्पः— मनोपात्त समस्तदुरित क्षयद्वारा श्रीपरमेश्वरप्रीत्यर्थं प्रातः (सायं) संध्यां उपासिष्ये ॥</div>
+  <div class="translation">Saṅkalpa (Formal Intention): "For the purpose of pleasing the Supreme Lord Śrī Parameśvara, through the destruction of all sins accumulated by the mind — I shall perform the morning (evening) Sandhyā."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">संकल्प</span><span class="wr">saṃkalpa</span><span class="wm">formal intention; sacred resolve</span></div>
+    <div class="wc"><span class="wo">मनोपात्त</span><span class="wr">manopātta</span><span class="wm">accumulated by the mind</span></div>
+    <div class="wc"><span class="wo">समस्त</span><span class="wr">samasta</span><span class="wm">all; entire</span></div>
+    <div class="wc"><span class="wo">दुरित</span><span class="wr">durita</span><span class="wm">sins; wrongdoings</span></div>
+    <div class="wc"><span class="wo">क्षय</span><span class="wr">kṣaya</span><span class="wm">destruction; dissolution</span></div>
+    <div class="wc"><span class="wo">परमेश्वर</span><span class="wr">parameśvara</span><span class="wm">the Supreme Lord</span></div>
+    <div class="wc"><span class="wo">प्रीत्यर्थम्</span><span class="wr">prītyartham</span><span class="wm">for the purpose of pleasing</span></div>
+    <div class="wc"><span class="wo">प्रातः / सायम्</span><span class="wr">prātaḥ / sāyam</span><span class="wm">morning / evening</span></div>
+    <div class="wc"><span class="wo">उपासिष्ये</span><span class="wr">upāsiṣye</span><span class="wm">I shall worship / perform</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">First Mārjana — Āpo Hiṣṭhā (Ṛgveda 10.9.1–3)</span>
+<div class="block">
+  <div class="original">मार्जनं— आपोहिष्ठेतितृचस्य सूक्तस्य सिंधुद्वीप ऋषि:, आपो देवता, गायत्री छंद:, मार्जने विनियोग: ॥
+ओं आपो हिष्ठामयोभुव: । तान् ऊर्जे दधातन । महेरणाय चक्षसे ॥
+योव: शिवतमो रंस: । तस्य भाजयते ह्न: । उशतीरिव मातर: ॥
+तस्मा अरंगमाम व: । यस्य क्षयाय जिन्वय । आपो जनयथा चन: ॥
+<div class="roman">oṃ āpo hiṣṭhā mayobhuvaḥ / tān ūrje dadhātana / maheraṇāya cakṣase / yo vaḥ śivatamo rasaḥ / tasya bhājayate hanaḥ / uśatīriva mātaraḥ / tasmā araṃgamāma vaḥ / yasya kṣayāya jinvaya / āpo janayathā canaḥ</div></div>
+  <div class="translation">Mārjana (self-purification by sprinkling water) — For the three-verse hymn beginning "Āpo Hiṣṭhā": sage Sindhudvīpa, deity the Waters, meter Gāyatrī; its purpose is in Mārjana. "OM. Waters, you are the source of well-being; give us vigour for the great divine eye. Your most auspicious essence — let us partake of it like eager mothers. We have come to you; O Waters, inspire us for our dwelling — give birth to us anew."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">मार्जनम्</span><span class="wr">mārjanam</span><span class="wm">purification by sprinkling water on oneself</span></div>
+    <div class="wc"><span class="wo">आपः</span><span class="wr">āpaḥ</span><span class="wm">waters; the water deity</span></div>
+    <div class="wc"><span class="wo">हिष्ठा</span><span class="wr">hiṣṭhā</span><span class="wm">you are; you stand as</span></div>
+    <div class="wc"><span class="wo">मयोभुवः</span><span class="wr">mayobhuvaḥ</span><span class="wm">source of joy/well-being</span></div>
+    <div class="wc"><span class="wo">ऊर्जे</span><span class="wr">ūrje</span><span class="wm">for vigour; strength</span></div>
+    <div class="wc"><span class="wo">दधातन</span><span class="wr">dadhātana</span><span class="wm">bestow; give (pl. imperative)</span></div>
+    <div class="wc"><span class="wo">शिवतम</span><span class="wr">śivatama</span><span class="wm">most auspicious</span></div>
+    <div class="wc"><span class="wo">रसः</span><span class="wr">rasaḥ</span><span class="wm">essence; juice; flavour</span></div>
+    <div class="wc"><span class="wo">उशतीः</span><span class="wr">uśatīḥ</span><span class="wm">eager; longing (feminine plural)</span></div>
+    <div class="wc"><span class="wo">मातरः</span><span class="wr">mātaraḥ</span><span class="wm">mothers</span></div>
+    <div class="wc"><span class="wo">जनयथा</span><span class="wr">janayathā</span><span class="wm">give birth; create anew</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Mantracamana — ritual water sipping with Sūrya-Agni mantra (begins)</span>
+<div class="block">
+  <div class="original">मंत्राचमनं— सूर्थ (अग्नि) श्रेतयस्यमन्त्रस्य, याज्ञवल्क्य उपनिषद् ऋषि:, सूर्थ (अग्नि) मामन्यु मन्युपतयो देवता:, प्रकृति छंद:, मंत्राचमने विनियोग: ॥ सूर्थ (अग्नि) भामा मन्युश्च मन्युपतयश्च</div>
+  <div class="translation">Mantracamana — For the mantra of Sūrya (Agni): the sage is from the Yājñavalkya Upaniṣad, the deities are Sūrya-Agni with Manyupati (lord of wrath), the meter is Prakṛti; its purpose is in Mantracamana (ritual sipping of water with mantra). "Sūrya-Agni, Bhāmā and Manyu (wrath), and Manyupatis…" [continues on next page]</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">मंत्राचमनम्</span><span class="wr">mantrācamanam</span><span class="wm">ritual sipping water with mantras</span></div>
+    <div class="wc"><span class="wo">सूर्थ / सूर्य</span><span class="wr">sūrtha / sūrya</span><span class="wm">the Sun</span></div>
+    <div class="wc"><span class="wo">अग्नि</span><span class="wr">agni</span><span class="wm">fire</span></div>
+    <div class="wc"><span class="wo">याज्ञवल्क्य</span><span class="wr">yājñavalkya</span><span class="wm">name of sage; author of Bṛhadāraṇyaka Upaniṣad</span></div>
+    <div class="wc"><span class="wo">मन्यु</span><span class="wr">manyu</span><span class="wm">wrath; righteous anger</span></div>
+    <div class="wc"><span class="wo">मन्युपति</span><span class="wr">manyupati</span><span class="wm">lord of wrath (deity)</span></div>
+    <div class="wc"><span class="wo">प्रकृति</span><span class="wr">prakṛti</span><span class="wm">a Vedic meter</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<!-- ══════════════════════ PDF PAGE 7 (book p.11) ══════════════════════ -->
+<div class="pg-head"><span class="pg-num">Book p.11</span><span class="pg-label">Mantracamana (cont.) · Second Mārjana</span></div>
+
+<span class="slabel">Mantracamana continued — full mantra text</span>
+<div class="block">
+  <div class="original">मन्युकृतेभ्य: । पापेभ्यो रक्षन्ताम् । यद् राज्या (अह्ना) पाप मकार्षं । मनसा वाचा हस्ताभ्यां । पद्भ्यामुदरेण शिश्ना । रात्रि (अह) स्तदवलुंपतु । यकिं च दुरितं मयि । इदमहं मामृतयोनौ । सूर्यें (अग्नि) ज्योतिषि जुहोमि स्वाहा ॥ इति जलं पीत्वा, केशव नारायण माधवेत्यादिभिराचम्य ॥</div>
+  <div class="translation">"…those born of wrath — may they protect us from sins. Whatever sin I may have committed by day (or night) — by mind, speech, hands, feet, belly, or genitals — may night (day) wash that away. Whatever evil is in me — this I offer into the immortal womb of the Sun (Agni), into the light — svāhā." Drinking the water thus, perform Ācamana again with Keśava, Nārāyaṇa, Mādhava, etc.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">पापेभ्यः</span><span class="wr">pāpebhyaḥ</span><span class="wm">from sins</span></div>
+    <div class="wc"><span class="wo">रक्षन्ताम्</span><span class="wr">rakṣantām</span><span class="wm">may they protect</span></div>
+    <div class="wc"><span class="wo">मनसा</span><span class="wr">manasā</span><span class="wm">by mind</span></div>
+    <div class="wc"><span class="wo">वाचा</span><span class="wr">vācā</span><span class="wm">by speech/word</span></div>
+    <div class="wc"><span class="wo">हस्ताभ्यां</span><span class="wr">hastābhyāṃ</span><span class="wm">by the two hands</span></div>
+    <div class="wc"><span class="wo">दुरितम्</span><span class="wr">duritam</span><span class="wm">evil; sin; wrongdoing</span></div>
+    <div class="wc"><span class="wo">अमृतयोनि</span><span class="wr">amṛtayoni</span><span class="wm">immortal womb/source</span></div>
+    <div class="wc"><span class="wo">ज्योतिषि</span><span class="wr">jyotiṣi</span><span class="wm">into the light</span></div>
+    <div class="wc"><span class="wo">जुहोमि</span><span class="wr">juhomi</span><span class="wm">I offer oblation; I sacrifice</span></div>
+    <div class="wc"><span class="wo">स्वाहा</span><span class="wr">svāhā</span><span class="wm">oblation-word; "I offer" (sacrificial formula)</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Second Mārjana — Dvitīya Mārjana (nine-verse extended form)</span>
+<div class="block">
+  <div class="original">द्वितीयमार्जनं— आपोहिष्ठेति नवचंस्य सूक्तस्य, सिन्धुद्वीपांबरीष ऋषि:, आपो देवता, गायत्री छंद:, पञ्चमीवर्धमाना, सप्तमी प्रतिष्ठा, अन्त्ये द्वे अनुष्टुभौ, पुनर्मार्जने विनियोग: ॥
+ओं आपोहिष्ठा मयोसुव: । ओं तान् ऊर्जे दंघातन । ओं महेरणाय चक्षसे ॥
+ओं योव: शिवतमो रस: । ओं तस्यभाजयतेह्न: । ओं उशतीरिव मातर: ॥
+ओं तस्मा अरंगमामव: । ओं यस्य क्षयाय जिन्वथ । ओं आपो जनयथाचन: ॥
+शंनो देवीरभिष्टय आपो भवन्तु पीतये । शंयोरभिस्रवन्तुन: ॥
+ईशानावार्याणां क्षयन्तीश्चर्षणीनाम् । अपोयाचामिभेषजम् ॥</div>
+  <div class="translation">Second Mārjana — For the nine-verse "Āpo Hiṣṭhā" hymn: sages Sindhudvīpa and Ambarīṣa, deity the Waters, meter Gāyatrī (5th verse Vardhamānā, 7th Pratiṣṭhā, last two Anuṣṭubh); its purpose is in the repeated purification. [Nine verses, each prefaced with OM, repeating the original three Āpo Hiṣṭhā verses.] Then: "May the divine waters be auspicious for us to drink; may they flow upon us for our well-being. O sovereign waters, sustaining all living beings — I seek medicine from you."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">द्वितीयमार्जनम्</span><span class="wr">dvitīyamārjanam</span><span class="wm">second purification rite</span></div>
+    <div class="wc"><span class="wo">नवचंस्य</span><span class="wr">navacaṃsya</span><span class="wm">of nine verses</span></div>
+    <div class="wc"><span class="wo">पञ्चमीवर्धमाना</span><span class="wr">pañcamīvardhamānā</span><span class="wm">a Vedic meter name</span></div>
+    <div class="wc"><span class="wo">प्रतिष्ठा</span><span class="wr">pratiṣṭhā</span><span class="wm">another Vedic meter</span></div>
+    <div class="wc"><span class="wo">अनुष्टुभ्</span><span class="wr">anuṣṭubh</span><span class="wm">32-syllable Vedic meter</span></div>
+    <div class="wc"><span class="wo">शम्</span><span class="wr">śam</span><span class="wm">auspicious; well-being; peace</span></div>
+    <div class="wc"><span class="wo">पीतये</span><span class="wr">pītaye</span><span class="wm">for drinking</span></div>
+    <div class="wc"><span class="wo">ईशाना</span><span class="wr">īśānā</span><span class="wm">sovereign; ruler (of waters)</span></div>
+    <div class="wc"><span class="wo">भेषजम्</span><span class="wr">bheṣajam</span><span class="wm">medicine; remedy; healing</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<!-- ══════════════════════ PDF PAGE 8 (book p.12) ══════════════════════ -->
+<div class="pg-head"><span class="pg-num">Book p.12</span><span class="pg-label">2nd Mārjana (cont.) · Aghamarṣaṇam · Arghyadāna (begins)</span></div>
+
+<span class="slabel">Second Mārjana — concluding verses (from Atharvaveda)</span>
+<div class="block">
+  <div class="original">सूर्ये ह्रसो ॥ इदमापः प्रवहत यत्किंच दुरितं मयि । यद्राह्मभिडुदोह्यद्राशेप उतानृतम् ॥ आपो अद्यान्वचारिषं रसेनसमगस्महि । पयस्वानम् आगहिं तमासंसृजवंचसा ॥ सशुषीस्तदपसोदिश्चानक्तं च सशुषी: । वरेण्यकतूर्हमादेवीरंसे हुवे ॥</div>
+  <div class="translation">"[We enter] the Sun's lake. O Waters, carry away whatever sin there is in me — whatever falsehood I may have drunk from, or untruth. Today I have followed the waters; I am merged with their essence. May the milky (waters) come to me enriched in the company (of all rivers). I call upon the ever-waking, ever-pure, luminous divine waters who are worthy of choice."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">प्रवहत</span><span class="wr">pravahata</span><span class="wm">carry away; flow off</span></div>
+    <div class="wc"><span class="wo">दुरितम्</span><span class="wr">duritam</span><span class="wm">sin; evil</span></div>
+    <div class="wc"><span class="wo">अनृतम्</span><span class="wr">anṛtam</span><span class="wm">falsehood; untruth</span></div>
+    <div class="wc"><span class="wo">रसेन</span><span class="wr">rasena</span><span class="wm">with essence; with flavour</span></div>
+    <div class="wc"><span class="wo">पयस्वानम्</span><span class="wr">payasvānam</span><span class="wm">rich in milk; nourishing</span></div>
+    <div class="wc"><span class="wo">सशुषीः</span><span class="wr">saśuṣīḥ</span><span class="wm">ever-waking; ever-pure</span></div>
+    <div class="wc"><span class="wo">वरेण्य</span><span class="wr">vareṇya</span><span class="wm">worthy of choice; most excellent</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Aghamarṣaṇam — Expulsion of the Sin-Person (Pāpapuruṣa)</span>
+<div class="block">
+  <div class="original">अघमर्षणम्—(पापुरुषविसर्जनं) ॥ ऋतं च सत्यं च तृचस्य सूक्तस्य, अघमर्षण ऋषि: भाववृत्तं देवता, अनुष्टुप् छंद:, पापुरुषविसर्जने विनियोग: ॥
+ओं ऋतं च सत्यं चाभीद्धात्तपसोऽध्यजायत । ततो राज्यजायत तत: समुद्रो अर्णव: ॥
+समुद्रादर्णवादधि संवत्सरो अजायत । अहो रात्राणि विद्धति विश्वस्य मिषतो वशी ॥
+सूर्याचंद्रमसौ धाता यथापूर्वं मकल्पयत् । दिवंच पृथिवीं चांतरिक्षमथोस्व: ॥
+इति वामनासापुटेन वायुनिरुध्य दक्षिणनासया पापुरुषं निरस्य तजलं अनवलोकयन् वामभागे क्षितौक्षिपेत् ॥ तत: पुनराचम्य ॥</div>
+  <div class="translation">Aghamarṣaṇa (Expulsion of the Sin-Person) — For this three-verse hymn beginning "Ṛtaṃ ca": sage Aghamarṣaṇa, deity Bhāvavṛtta, meter Anuṣṭubh; its purpose is in expelling the sin-person. "OM. From the great Tapas (ardour) were born Truth and Cosmic Order (Ṛta). From that arose night. From that arose the ocean. From the ocean and from the ocean arose the year. Day and night rule over all of creation. The Creator set the Sun and Moon in place as before — heaven, earth, and the atmosphere, and the higher worlds." — Holding the breath through the left nostril, expel the sin-person through the right nostril, cast that water to the left side without looking at it. Then perform Ācamana again.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">अघमर्षण</span><span class="wr">aghamarṣaṇa</span><span class="wm">expiation; washing away sin</span></div>
+    <div class="wc"><span class="wo">पापुरुष</span><span class="wr">pāpuruṣa</span><span class="wm">the sin-person (personified sins within)</span></div>
+    <div class="wc"><span class="wo">विसर्जनम्</span><span class="wr">visarjanam</span><span class="wm">expulsion; releasing</span></div>
+    <div class="wc"><span class="wo">ऋतम्</span><span class="wr">ṛtam</span><span class="wm">cosmic order; truth; right</span></div>
+    <div class="wc"><span class="wo">सत्यम्</span><span class="wr">satyam</span><span class="wm">truth; reality</span></div>
+    <div class="wc"><span class="wo">तपस्</span><span class="wr">tapas</span><span class="wm">austerity; spiritual heat</span></div>
+    <div class="wc"><span class="wo">अजायत</span><span class="wr">ajāyata</span><span class="wm">was born; arose</span></div>
+    <div class="wc"><span class="wo">समुद्रः</span><span class="wr">samudraḥ</span><span class="wm">ocean; sea</span></div>
+    <div class="wc"><span class="wo">अर्णवः</span><span class="wr">arṇavaḥ</span><span class="wm">flood; the billowing ocean</span></div>
+    <div class="wc"><span class="wo">संवत्सर</span><span class="wr">saṃvatsara</span><span class="wm">the year</span></div>
+    <div class="wc"><span class="wo">सूर्याचंद्रमसौ</span><span class="wr">sūryācandramasau</span><span class="wm">Sun and Moon (dual)</span></div>
+    <div class="wc"><span class="wo">धाता</span><span class="wr">dhātā</span><span class="wm">the Creator; Brahmā</span></div>
+    <div class="wc"><span class="wo">वामनासापुट</span><span class="wr">vāmanāsāpuṭa</span><span class="wm">left nostril</span></div>
+    <div class="wc"><span class="wo">दक्षिणनासा</span><span class="wr">dakṣiṇanāsā</span><span class="wm">right nostril</span></div>
+    <div class="wc"><span class="wo">वायुनिरुध्य</span><span class="wr">vāyunirodhya</span><span class="wm">holding the breath</span></div>
+    <div class="wc"><span class="wo">क्षितौ क्षिपेत्</span><span class="wr">kṣitau kṣipet</span><span class="wm">should cast on the ground</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Arghyadāna — Offering water to the Sun (Gāyatrī mantra)</span>
+<div class="block">
+  <div class="original">अर्घ्यदानानि— तत्सवितुरिति मन्त्रस्य, विश्वामित्र ऋषि:, संवता देवता, गायत्री छंद:, प्रातः (सायं) अर्घ्यं प्रदाने विनियोग: । ओं</div>
+  <div class="translation">Arghyadāna (offering of water to the Sun) — For the mantra beginning "Tatsavitur": sage Viśvāmitra, deity Savitā, meter Gāyatrī; its purpose is in the offering of arghya (water offering) at morning (or evening). "OM…" [continues on next page]</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">अर्घ्यदान</span><span class="wr">arghyadāna</span><span class="wm">offering of water (to the Sun)</span></div>
+    <div class="wc"><span class="wo">तत्सवितुः</span><span class="wr">tatsavituḥ</span><span class="wm">of that Savitā (the Sun)</span></div>
+    <div class="wc"><span class="wo">विश्वामित्र</span><span class="wr">viśvāmitra</span><span class="wm">sage Viśvāmitra; friend of all</span></div>
+    <div class="wc"><span class="wo">सविता</span><span class="wr">savitā</span><span class="wm">the Sun; the life-giving deity</span></div>
+    <div class="wc"><span class="wo">अर्घ्यम्</span><span class="wr">arghyam</span><span class="wm">water offering (held in cupped palms)</span></div>
+    <div class="wc"><span class="wo">प्रदाने</span><span class="wr">pradāne</span><span class="wm">in the giving/offering</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<!-- ══════════════════════ PDF PAGE 9 (book p.13) ══════════════════════ -->
+<div class="pg-head"><span class="pg-num">Book p.13</span><span class="pg-label">Arghyadāna (cont.) · Āsana · Gāyatrī Invocation</span></div>
+
+<span class="slabel">Arghyadāna continued — Gāyatrī with vyāhṛtis, offered three times</span>
+<div class="block">
+  <div class="original">भूर्भुव: स्व: तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि । धियोयोन: प्रचोदयात् ॥ श्री सूर्यसावित्र्यै नम इदमर्घ्यं समर्पयामि, एवं त्रि: । काल्तिक्रमदोष परिहारार्थं प्रायश्चित्ताधर्घप्रदानं करिष्ये, इदमपि गायत्र्यैव ॥ असावादित्यो ब्रह्म, इत्यात्मानं प्रदक्षिणं परिफिच्य अप उपस्पृशेत् ॥ तत: पुनराचम्य ।</div>
+  <div class="translation">"OM Bhūr Bhuvaḥ Svaḥ — We meditate on the supreme radiance of the divine Savitā; may He inspire our intellects." "Salutation to Śrī Sūryasāvitrī — I offer this arghya (water)," — thus three times. "For the expiation of the fault of performing this rite at the wrong time, I shall also offer the prāyaścitta (atonement) arghya — this too with the Gāyatrī." "That Sun is Brahman" — saying thus, circumambulate oneself (turn clockwise), touch water. Then perform Ācamana again.</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">अर्घ्यं समर्पयामि</span><span class="wr">arghyaṃ samarpayāmi</span><span class="wm">I offer this arghya/water</span></div>
+    <div class="wc"><span class="wo">एवं त्रिः</span><span class="wr">evaṃ triḥ</span><span class="wm">thus three times</span></div>
+    <div class="wc"><span class="wo">कालातिक्रम</span><span class="wr">kālātikrama</span><span class="wm">overstepping / wrong timing</span></div>
+    <div class="wc"><span class="wo">दोष</span><span class="wr">doṣa</span><span class="wm">fault; defect</span></div>
+    <div class="wc"><span class="wo">परिहारार्थम्</span><span class="wr">parihārārtham</span><span class="wm">for the purpose of remedying</span></div>
+    <div class="wc"><span class="wo">प्रायश्चित्त</span><span class="wr">prāyaścitta</span><span class="wm">atonement; expiation</span></div>
+    <div class="wc"><span class="wo">असौ</span><span class="wr">asau</span><span class="wm">that; yonder (pointing to the Sun)</span></div>
+    <div class="wc"><span class="wo">आदित्यः</span><span class="wr">ādityaḥ</span><span class="wm">the Sun; son of Aditi</span></div>
+    <div class="wc"><span class="wo">ब्रह्म</span><span class="wr">brahma</span><span class="wm">Brahman; the Supreme Reality</span></div>
+    <div class="wc"><span class="wo">प्रदक्षिणम्</span><span class="wr">pradakṣiṇam</span><span class="wm">clockwise circumambulation</span></div>
+    <div class="wc"><span class="wo">उपस्पृशेत्</span><span class="wr">upaspṛśet</span><span class="wm">should touch (water)</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Āsana — Sacred Seat Mantra</span>
+<div class="block">
+  <div class="original">आसनं— पृथ्वीत्यस्यमन्त्रस्य, मेरुपृष्ठ ऋषि:, कूर्मो देवता, क्षुतंछंद:, आसने विनियोग: ॥ ओं पृथ्वित्वया धृतालोका देवि त्वं विष्णुनाधृता । त्वञ्च धारय मां देवि पवित्रं कुरुचासनम् ॥ अपसर्पन्तु ते भूता येभूता भूमिसंस्थिता: । येभूता विघ्नकर्तार: ते नश्यंतु शिवाज्ञया ॥ अपक्रामन्तु भूतानि पिशाचा: सर्वतो दिशं । सर्वेषामविरोधेन ब्रह्मकर्मसमारभे ॥</div>
+  <div class="translation">Āsana (Sacred Seat) — For the mantra of Pṛthvī: sage Merupṛṣṭha, deity Kūrma (the Tortoise), meter Kṣutam; its purpose is for the ritual seat. "OM. O Goddess Earth, you hold all the worlds; you yourself are held by Viṣṇu. Hold me, O Goddess, and make my seat pure. May all beings dwelling on the earth move away. May all those who cause obstacles perish by Śiva's command. May all spirits and demons depart in all directions. Without opposition from any, I begin the Brahma-rite."</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">आसनम्</span><span class="wr">āsanam</span><span class="wm">seat; sitting posture; ritual seat</span></div>
+    <div class="wc"><span class="wo">पृथ्वी</span><span class="wr">pṛthvī</span><span class="wm">the Earth Goddess</span></div>
+    <div class="wc"><span class="wo">मेरुपृष्ठ</span><span class="wr">merupṛṣṭha</span><span class="wm">back of Mount Meru (sage)</span></div>
+    <div class="wc"><span class="wo">कूर्म</span><span class="wr">kūrma</span><span class="wm">the Tortoise; Viṣṇu's second avatāra</span></div>
+    <div class="wc"><span class="wo">धृतलोका</span><span class="wr">dhṛtalokā</span><span class="wm">you who hold all the worlds</span></div>
+    <div class="wc"><span class="wo">विष्णुनाधृता</span><span class="wr">viṣṇunādhṛtā</span><span class="wm">held by Viṣṇu</span></div>
+    <div class="wc"><span class="wo">पवित्रम्</span><span class="wr">pavitram</span><span class="wm">pure; holy</span></div>
+    <div class="wc"><span class="wo">अपसर्पन्तु</span><span class="wr">apasarpantu</span><span class="wm">may they move away; depart</span></div>
+    <div class="wc"><span class="wo">विघ्नकर्तारः</span><span class="wr">vighnakartāraḥ</span><span class="wm">those who cause obstacles</span></div>
+    <div class="wc"><span class="wo">शिवाज्ञया</span><span class="wr">śivājñayā</span><span class="wm">by Śiva's command/order</span></div>
+    <div class="wc"><span class="wo">पिशाचाः</span><span class="wr">piśācāḥ</span><span class="wm">ghosts; evil spirits</span></div>
+    <div class="wc"><span class="wo">ब्रह्मकर्म</span><span class="wr">brahmakarma</span><span class="wm">the Vedic/sacred rite</span></div>
+    <div class="wc"><span class="wo">समारभे</span><span class="wr">samārabhe</span><span class="wm">I begin; I commence</span></div>
+  </div></details>
+</div>
+
+<span class="slabel">Gāyatrī Invocation — Summoning of Gāyatrī, Sāvitrī, Sarasvatī and all divine powers</span>
+<div class="block">
+  <div class="original">ओं इत्येकाक्षरं ब्रह्म, अग्निर्देवता ब्रह्म इत्याषं, गायत्रं छंदं, परमात्मं स्वरूपं, सायुज्यं विनियोगं, आयातु वरदादेवी अक्षरं ब्रह्मसंमितं । गायत्रीं छंदसां मातेदं ब्रह्मजुषस्वमे ॥ यद्राज्या (दन्हा) कुरुतेपापं तद्राज्या (दन्हा) प्रतिमुच्यते । सर्वर्णें महादेवि संधाविद्ये सरस्वति ॥ ओजोऽसि, सहोऽसि, बलमसि, भ्राजोऽसि, देवानां धामनामासि, विश्वमसि, विश्वायु:, सर्वमसि, सर्वायु:, अभिभूरों, गायत्रीं आवाहयामि, सावित्रीं आवाहयामि, सरस्वतीं आवाहयामि, छन्दर्षीनावाहयामि, श्रियं आवाहयामि, बलं आवाहयामि, गायत्र्या गायत्री छंद:, विश्वामित्र ऋषि:, सविता</div>
+  <div class="translation">"OM — the single-syllable Brahman; deity is Agni; the word is Brahman; the meter is Gāyatrī; the form is the Supreme Self; the purpose is union (sāyujya). May the boon-granting Goddess arrive — Gāyatrī, the syllable equal to Brahman, mother of all meters — may she be pleased with this Brahma-rite of mine. Whatever sin one commits by day (night), one is freed from that by day (night). O great Goddess, O repository of all phonemes, O Sarasvatī who knows all. You are vigour (Ojas), you are might (Sahas), you are strength (Bala), you are radiance (Bhrājas), you are the abode of the gods, you are the universe, you are all life, you are everything, you are all longevity, you are the supreme conquering force — OM. I invoke Gāyatrī, I invoke Sāvitrī, I invoke Sarasvatī, I invoke the Chandas seers, I invoke Śrī (Prosperity), I invoke Bala (Strength). [For the Gāyatrī:] meter is Gāyatrī, sage is Viśvāmitra, deity is Savitā…" [text continues]</div>
+  <details class="words"><summary>Word meanings</summary><div class="word-grid">
+    <div class="wc"><span class="wo">एकाक्षरम्</span><span class="wr">ekākṣaram</span><span class="wm">single syllable (OM)</span></div>
+    <div class="wc"><span class="wo">ब्रह्म</span><span class="wr">brahma</span><span class="wm">the Supreme; the Vedas</span></div>
+    <div class="wc"><span class="wo">वरदा</span><span class="wr">varadā</span><span class="wm">the boon-giving (Goddess)</span></div>
+    <div class="wc"><span class="wo">गायत्री</span><span class="wr">gāyatrī</span><span class="wm">the Gāyatrī mantra; Gāyatrī Goddess</span></div>
+    <div class="wc"><span class="wo">सांविधेये</span><span class="wr">sāvidheyė</span><span class="wm">repository of knowledge</span></div>
+    <div class="wc"><span class="wo">सरस्वती</span><span class="wr">sarasvatī</span><span class="wm">Goddess of speech and learning</span></div>
+    <div class="wc"><span class="wo">ओजः</span><span class="wr">ojaḥ</span><span class="wm">vital energy; vigour</span></div>
+    <div class="wc"><span class="wo">सहः</span><span class="wr">sahaḥ</span><span class="wm">might; conquering power</span></div>
+    <div class="wc"><span class="wo">बलम्</span><span class="wr">balam</span><span class="wm">strength; power</span></div>
+    <div class="wc"><span class="wo">भ्राजः</span><span class="wr">bhrājaḥ</span><span class="wm">radiance; brilliance</span></div>
+    <div class="wc"><span class="wo">धामनाम्</span><span class="wr">dhāmanām</span><span class="wm">abode; realm; dwelling place</span></div>
+    <div class="wc"><span class="wo">विश्वम्</span><span class="wr">viśvam</span><span class="wm">the universe; all</span></div>
+    <div class="wc"><span class="wo">आवाहयामि</span><span class="wr">āvāhayāmi</span><span class="wm">I invoke; I summon</span></div>
+    <div class="wc"><span class="wo">सावित्री</span><span class="wr">sāvitrī</span><span class="wm">solar Goddess; Gāyatrī as Savitā's consort</span></div>
+    <div class="wc"><span class="wo">छन्दर्षिन्</span><span class="wr">chandarṣin</span><span class="wm">the seers of the Vedic meters</span></div>
+    <div class="wc"><span class="wo">श्री</span><span class="wr">śrī</span><span class="wm">Goddess Lakṣmī; prosperity</span></div>
+    <div class="wc"><span class="wo">सायुज्यम्</span><span class="wr">sāyujyam</span><span class="wm">union with the deity; liberation</span></div>
+  </div></details>
+</div>
+
+<hr class="ornament">
+
+<hr class="ornament">
+
+<footer>
+  <span class="f-dev">॥ शुभमस्तु ॥</span>
+  <em>Sandhyā Vandhanam · Part IIb · Ācamana, Prāṇāyāma, Mārjana, Aghamarṣaṇa, Arghya, Āsana &amp; Gāyatrī Invocation (Book pp. 9–13)</em>
+</footer>
+
+</div>
+</body>
+</html>
